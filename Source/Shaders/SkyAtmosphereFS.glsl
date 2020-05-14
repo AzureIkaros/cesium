@@ -74,7 +74,7 @@ void main (void)
         rayleighColor
     );
 
-    gl_FragColor = calculateFinalColor(startPositionWC, toCamera, lightDirection, rayleighColor, mieColor);
+    gl_FragColor = calculateFinalColor(czm_viewerPositionWC, czm_viewerPositionWC - v_outerPositionWC, getLightDirection(czm_viewerPositionWC), rayleighColor, mieColor);
 #else
     vec3 toCamera = czm_viewerPositionWC - v_outerPositionWC;
     vec3 lightDirection = getLightDirection(czm_viewerPositionWC);
