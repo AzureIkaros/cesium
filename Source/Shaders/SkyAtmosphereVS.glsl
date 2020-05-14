@@ -37,14 +37,14 @@ attribute vec4 position;
 
 varying vec3 v_outerPositionWC;
 
-#ifndef GLOBE_TRANSLUCENT
+#ifndef FULL_ATMOSPHERE
 varying vec3 v_rayleighColor;
 varying vec3 v_mieColor;
 #endif
 
 void main(void)
 {
-#ifndef GLOBE_TRANSLUCENT
+#ifndef FULL_ATMOSPHERE
     calculateMieColorAndRayleighColor(
         czm_viewerPositionWC,
         position.xyz,
